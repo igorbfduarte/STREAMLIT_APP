@@ -37,6 +37,7 @@ import all the data necessary for the plotting
 """
 
 
+@st.cache
 def processing_all_needed_data(all_data, altura_do_ano):
     stages = dict(
         [
@@ -70,6 +71,7 @@ import the incidence data necessary for the plotting
 """
 
 
+@st.cache
 def processing_incidence_needed_data(Data_incidences, altura_do_ano):
     stages = dict(
         [
