@@ -118,4 +118,4 @@ widgetsnbextension==3.5.2
 wrapt==1.13.3
 zipp==3.7.0
 mapclassify==2.4.3
-networkx==2.8
+networkx==2.6.3
