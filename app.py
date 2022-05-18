@@ -40,7 +40,7 @@ def load_all_necessary_data():
         :, all_data.columns.get_loc("dens_pop") : all_data.shape[1]
     ].copy()  # dens_pop is the
     concelhos_format = gpd.read_file(
-        "Geographic_Info\concelhos_shape_file\concelhos_format.shp"
+        r"Geographic_Info/concelhos_shape_file/concelhos_format.shp"
     )
     geo_other_data_concelhos = pd.merge(
         concelhos_format,
