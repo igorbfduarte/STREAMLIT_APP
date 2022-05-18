@@ -12,6 +12,10 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
+concelhos_format = gpd.read_file(
+    r"Geographic_Info/concelhos_shape_file/concelhos_format.shp"
+)
+
 
 @st.cache
 def load_all_necessary_data():
@@ -39,9 +43,6 @@ def load_all_necessary_data():
     other_data = all_data.iloc[
         :, all_data.columns.get_loc("dens_pop") : all_data.shape[1]
     ].copy()  # dens_pop is the
-    concelhos_format = gpd.read_file(
-        r"Geographic_Info/concelhos_shape_file/concelhos_format.shp"
-    )
     geo_other_data_concelhos = pd.merge(
         concelhos_format,
         other_data,
