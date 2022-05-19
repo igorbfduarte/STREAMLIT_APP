@@ -66,8 +66,8 @@ def load_all_necessary_data():
 
 # we can move any widge(button, selectbox, slider etc) to the sidebar by using it as a prefix
 user_wanted_page = st.sidebar.selectbox(
-    "Explore Covid-19 Data or Use SOM clustering as Warning System",
-    ["Explore", "Warning System"],
+    "Explore Covid-19 Data or Use SOM clustering as Classification Tool",
+    ["Explore", "Classification Tool"],
 )
 
 if user_wanted_page == "Explore":
