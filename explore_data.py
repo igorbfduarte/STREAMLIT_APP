@@ -58,14 +58,16 @@ def show_explore_data_page(
         st.pyplot(SOM_clustering_grid(all_needed_data, time_frame, colors_per_neuron))
     with col2:
         st.pyplot(SOM_clustering_map(all_needed_data, time_frame, colors_per_neuron))
-    # now we will plot the scatter plot of incidences per neuron
-    st.write("\n")
-    st.pyplot(
-        plot_raw_incidências_per_neuron_fill_between(
-            raw_data_Covid19, all_data, time_frame, colors_per_neuron
-        )
-    )
+
+    # # now we will plot the scatter plot of incidences per neuron
+    # st.write("\n")
+    # st.pyplot(
+    #     plot_raw_incidências_per_neuron_fill_between(
+    #         raw_data_Covid19, all_data, time_frame, colors_per_neuron
+    #     )
+    # )
     st.write("")
+
     # cartographic map of the most affected geographical areas in this time period if user wants to and also the cartographic map of each of the additional
     # socio economic and demographic features
     col3, col4 = st.columns((2.5, 2.5))
