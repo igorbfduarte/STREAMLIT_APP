@@ -63,7 +63,7 @@ def load_predict_page(all_data):
     dic_neurons_above_average = load_obj("dic_neurons_above_average")
     col1.pyplot(
         plot_concelhos_classified_together(
-            concelhos_mapped_together, colors_per_neuron, neuron_coords
+            concelhos_mapped_together, colors_per_neuron, neuron_coords, concelho
         )
     )
     with col2:

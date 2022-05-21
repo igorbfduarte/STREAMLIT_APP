@@ -133,7 +133,7 @@ Function which plots the concelhos that were mapped to the same neuron as the ne
     allow_output_mutation=True,
 )
 def plot_concelhos_classified_together(
-    concelhos_mapped_together, colors_per_neuron, neuron_coords
+    concelhos_mapped_together, colors_per_neuron, neuron_coords, concelho_selected
 ):
     # import the geodataframes necessary for the plotting
     concelhos_format, _ = importing_lat_long_concelho_data()
@@ -142,7 +142,9 @@ def plot_concelhos_classified_together(
     # all they other concelhos will be attributed the color white, to just display their borders
     color_BMU = list(colors_per_neuron[neuron_coords])
     color_concelho = [
-        color_BMU if (concelho in concelhos_mapped_together[0]) else [1, 1, 1]
+        color_BMU
+        if (concelho in concelhos_mapped_together[0]) or concelho == concelho_selected
+        else [1, 1, 1]
         for concelho in concelhos_format.index
     ]
     # adding the correspodent color for each concelho as a new column, respecting their BMU color unit
