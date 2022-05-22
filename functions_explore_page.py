@@ -37,7 +37,7 @@ import all the data necessary for the plotting
 """
 
 
-@st.cache
+@st.cache(ttl=12 * 3600)
 def processing_all_needed_data(all_data, altura_do_ano):
     stages = dict(
         [
@@ -71,6 +71,7 @@ import the incidence data necessary for the plotting
 """
 
 
+@st.cache(ttl=12 * 3600)
 @st.cache
 def processing_incidence_needed_data(Data_incidences, altura_do_ano):
     stages = dict(
@@ -121,7 +122,7 @@ Generic Functions that allow at any stage to have the SOM_clustering_map and SOM
 """
 
 
-@st.cache(hash_funcs={matplotlib.figure.Figure: lambda _: None})
+@st.cache(hash_funcs={matplotlib.figure.Figure: lambda _: None}, ttl=12 * 3600)
 def SOM_clustering_grid(all_data_needed, altura_do_ano, colors_per_neuron):
     data = all_data_needed.values
     # load and test the saved  trained SOM
@@ -182,6 +183,7 @@ def SOM_clustering_grid(all_data_needed, altura_do_ano, colors_per_neuron):
     hash_funcs={matplotlib.figure.Figure: lambda _: None},
     suppress_st_warning=True,
     allow_output_mutation=True,
+    ttl=12 * 3600,
 )
 def SOM_clustering_map(all_data_needed, altura_do_ano, colors_per_neuron):
     # loading the previous trained SOM for this time period
@@ -227,7 +229,7 @@ Function that plots incidences for each of the neurons in one of the specific ti
 """
 
 
-@st.cache(hash_funcs={matplotlib.figure.Figure: lambda _: None})
+@st.cache(hash_funcs={matplotlib.figure.Figure: lambda _: None}, ttl=12 * 3600)
 def plot_raw_incidências_per_neuron_fill_between(
     raw_data, all_data, altura_do_ano, colors_per_neuron
 ):
@@ -391,6 +393,7 @@ Function which plots the geospatial pattern of neurons Above Average in any of t
     hash_funcs={matplotlib.figure.Figure: lambda _: None},
     suppress_st_warning=True,
     allow_output_mutation=True,
+    ttl=12 * 3600,
 )
 def plot_concelhos_in_risk_neurons(
     all_data_needed, altura_do_ano, dic_neurons_above_average, colors_per_neuron
@@ -459,7 +462,7 @@ feature_names_list = [
 """Function Which which Plots the quantiles distribution for any of the features in Portugal's Mainland, Legend in colorbar format"""
 
 
-@st.cache(hash_funcs={matplotlib.figure.Figure: lambda _: None})
+@st.cache(hash_funcs={matplotlib.figure.Figure: lambda _: None}, ttl=12 * 3600)
 def plot_feature_distribution_in_Portugal_cmap(
     feature_to_plot, geo_other_data_concelhos
 ):

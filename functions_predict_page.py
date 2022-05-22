@@ -131,6 +131,7 @@ Function which plots the concelhos that were mapped to the same neuron as the ne
     hash_funcs={matplotlib.figure.Figure: lambda _: None},
     suppress_st_warning=True,
     allow_output_mutation=True,
+    ttl=12 * 3600,
 )
 def plot_concelhos_classified_together(
     concelhos_mapped_together, colors_per_neuron, neuron_coords, concelho_selected
